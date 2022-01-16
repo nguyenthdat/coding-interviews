@@ -10,8 +10,8 @@ func are_anagram(s1, s2 string) bool {
 	if len(s1) != len(s2) {
 		return false
 	}
-	h1 := map[string]int{}
-	h2 := map[string]int{}
+	h1 := map[string]int{} // Hash map table 1
+	h2 := map[string]int{} // Hash map table 2
 	for _, s := range s1 {
 		if _, ok := h1[string(s)]; ok {
 			h1[string(s)] += 1
