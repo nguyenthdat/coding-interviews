@@ -1,10 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
 
 func main() {
 	fmt.Println(are_anagram("anagram", "nagaram"))
-	fmt.Println(are_anagram("car", "rat"))
+	fmt.Println(are_anagram_v2("anagram", "nagaram"))
 }
 
 func are_anagram(s1, s2 string) bool {
@@ -34,4 +38,17 @@ func are_anagram(s1, s2 string) bool {
 		}
 	}
 	return true
+}
+
+func SortString(w string) string {
+	s := strings.Split(w, "")
+	sort.Strings(s)
+	return strings.Join(s, "")
+}
+
+func are_anagram_v2(s1, s2 string) bool {
+	if len(s1) != len(s2) {
+		return false
+	}
+	return SortString(s1) == SortString(s2)
 }
