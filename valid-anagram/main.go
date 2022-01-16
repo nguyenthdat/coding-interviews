@@ -4,6 +4,7 @@ import "fmt"
 
 func main() {
 	fmt.Println(are_anagram("anagram", "nagaram"))
+	fmt.Println(are_anagram("car", "rat"))
 }
 
 func are_anagram(s1, s2 string) bool {
