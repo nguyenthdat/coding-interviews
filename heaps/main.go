@@ -10,7 +10,6 @@ func (h *MaxHeap) insert(key int) {
 
 }
 
-// x (parrent) * 2 + 1 = y (left child index)
 func (h *MaxHeap) maxHeapifyUp(index int) {
 	for h.slice[parent(index)] < h.slice[index] {
 		h.swap(parent(index), index)
@@ -18,14 +17,18 @@ func (h *MaxHeap) maxHeapifyUp(index int) {
 	}
 }
 
+// (index -1) /2 = parent index
 func parent(i int) int {
 	return (i - 1) / 2
+
 }
 
+// index * 2 + 1 = (left child index)
 func left(i int) int {
 	return i*2 + 1
 }
 
+// index * 2 + 1 = (right child index)
 func right(i int) int {
 	return i*2 + 2
 }
